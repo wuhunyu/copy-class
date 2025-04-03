@@ -1,0 +1,23 @@
+<idea-plugin>
+    <id>top.wuhunyu.plugin.copy-class</id>
+    <name>CopyClass</name>
+    <description>This is a plugin for IDEA that copies the class file of a Java file to the clipboard.</description>
+    <change-notes>first version</change-notes>
+    <version>0.0.1</version>
+    <vendor email="wuhunyu@gmail.com" url="https://wuhunyu.top">wuhunyu</vendor>
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+    <actions>
+        <group id="top.wuhunyu.plugin.copy-class">
+            <action id="top.wuhunyu.copyclass.CopyClassAction"
+                    class="top.wuhunyu.copyclass.CopyClassAction"
+                    text="Copy Class"
+                    description="Copy the bytecode file of the current source code, which is sourced from the project's compiled target files. The project needs to be compiled first before use.">
+            </action>
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="Copy.Paste.Special"/>
+            <add-to-group group-id="CutCopyPasteGroup" anchor="last"/>
+        </group>
+    </actions>
+</idea-plugin>
